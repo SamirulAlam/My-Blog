@@ -6,7 +6,7 @@ var multer=require("multer");
 
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
-      cb(null, "uploads/")
+      cb(null, "./uploads")
     },
     filename: function (req, file, cb) {
       cb(null,`${file.fieldname}-${Date.now()}${getExt(file.mimetype)}`)
@@ -31,7 +31,7 @@ app.use((req,res,next)=>{
     next();
 })
 
-app.use("./uploads",express.static("uploads"));
+app.use("/uploads",express.static("uploads"));
 
 app.use(express.json());
 
@@ -55,14 +55,14 @@ app.post("/api/posts", upload.single("post-image"),(req,res)=>{
         "id":`${Date.now()}`,
         "title":req.body.title,
         "content":req.body.content,
-        "post_image":req.file.path,
+        "post_image":req.file.path.split("\\").join("/"),
         "added_date":`${Date.now()}`
 
     }
     postData.add(newPost);
-     console.log(req.body);
-     console.log(req.file);
-    res.status(201).send(newPost);
+    //  console.log(req.body);
+    //  console.log(req.file);
+    res.status(201).send("ok");
 })
 
 app.listen(3000,()=>console.log("Listening on http://localhost:3000"));

@@ -39,7 +39,7 @@ header::before{
 footer{
     min-height: 100px; 
     background-color: bisque;
-    color: blanchedalmond;
+    color: black;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -56,7 +56,7 @@ footer{
     background-size: cover;
 }
 
-.profile-name{
+.profile-name, .title{
     font-size: 3em;
     font-weight: bold;
 }
@@ -166,6 +166,6 @@ a.post-link{
     text-decoration: none;
 }
 
-.home-page header{
+.home-page header, .new-post-page header{
      background-image: url(./assets/banner.jpeg); ;
 } 
