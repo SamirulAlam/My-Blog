@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./new-post.css">
+</head>
+<body>
+    <div class="container new-post-page">
+        <header>
+            <div class="header-container">
+                <div class="header-blog-test">
+                    <div class="title">New Post</div>
+                </div>
+                <div class="subtext">
+                    Lets add a new blog post 
+                </div>
+            </div>
+        </header>
+        <div class="main">
+            <div class="main-container">
+                <div class="navigation">
+                    <a href="index.html">Back</a>
+                </div>
+                <div class="form-container">
+                    <form>
+                        <input type="text" id="form-post-title" name="post-title" placeholder="title">
+                        <textarea name="" id="form-post-content" cols="30" rows="10" name="post-content" placeholder="post content"></textarea>
+                        <div>
+                            <label>Choose an image</label>
+                            <input type="file" name="post-image" id="form-post-image" accept="image/*"> 
+                        </div>
+                        <button id="form-post-submit" type="button" onclick="submitNewPost()">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <p>Made with love by Samir</p>
+        </footer>
+    </div>
+
+    <script src="./new-post.js"></script>
+</body>
+</html>
